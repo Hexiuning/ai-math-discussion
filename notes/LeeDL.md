@@ -36,28 +36,28 @@ $$
 #### Hard Sigmoid
 
 $$
-H(x)=
+\mathrm{HardSigmoid}(x)= 
 \begin{cases}
-0, & x\leq 0,\\
-x, & 0<x<1,\\
-1, & x\geq 1.
+0 & x \leq 0 \\
+x & 0 < x < 1 \\
+1 & x \geq 1
 \end{cases}
 $$
 
 #### ReLU
 
 $$
-\operatorname{ReLU}(x)=\max(0,x)=
+\mathrm{ReLU}(x)=
 \begin{cases}
-0, & x\leq 0,\\
-x, & x>0.
+x & x>0\\
+0 & x\leq0
 \end{cases}
 $$
 
 Hard Sigmoid 可以由两个 ReLU 组成：
 
 $$
-H(x)=\operatorname{ReLU}(x)-\operatorname{ReLU}(x-1).
+\mathrm{HardSigmoid}(x)=\mathrm{ReLU}(x)-\mathrm{ReLU}(x-1).
 $$
 
 > - 神经元数量多于输入向量长度会有问题吗?
@@ -83,7 +83,9 @@ $$
 模型够了，但是优化器能力不够找不到这个参数。
 
 例子：
+
 <img src="./fig/LeeDL/56vs20.png" alt="56 vs 20" width="500">
+
 这个不是过拟合，56层只要前20层和20的一样，后面36层不变就可以，显然是没有优化出来。
 
 **解法：**
